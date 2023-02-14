@@ -43,3 +43,6 @@ app.use(express.json());
     })
   })
 })();
+
+//Async function called to start the server//
+startApolloServer(typeDefs, resolvers);
