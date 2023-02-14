@@ -1,7 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
+
   username: {
     type: String,
     required: true,
@@ -13,6 +14,13 @@ const userSchema = new Schema({
     required: true,
     unique: true,
     match: [/.+@.+\..+/, 'Must match an email address!'],
+  },
+  //Add a phone number field//
+  phoneNumber: {
+    type: Number,
+    required: true,
+    unique: true,
+    minlength: 10
   },
   password: {
     type: String,
