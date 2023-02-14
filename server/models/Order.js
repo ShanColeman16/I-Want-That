@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const productOrder = new mongoose.Schema(
+const order = new mongoose.Schema(
     {
         viewAllProducts: [
             {
@@ -40,8 +40,7 @@ const productOrder = new mongoose.Schema(
                 required: true,
                 },
                 
-        
-        status: {  
+        orderStatus: {  
             type: String,
             enum: ['pending', 'confirmed', 'shipped', 'delivered'],
             default: 'pending',
