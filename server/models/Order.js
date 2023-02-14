@@ -13,7 +13,7 @@ const order = new mongoose.Schema(
         username: {
                 type: Schema.Types.ObjectId, 
                 ref: 'User', 
-                required: true
+                required: true,
                 unique: true,
                 trim: true, 
             },
@@ -48,5 +48,7 @@ const order = new mongoose.Schema(
     },
     {
         timestamps: true,
-    }
-);
+    });
+
+    const Order = model('Order', orderSchema);
+    module.exports = Order;
